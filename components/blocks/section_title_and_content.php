@@ -17,14 +17,14 @@ $section_content = get_sub_field('section_content');
         <div class="container">
             <?php if (!empty($section_title)) { ?>
                 <div class="main-title">
-                    <h2 class="title-default"><?php echo $section_title; ?></h2>
+                    <h2 class="title-default"><?php _e($section_title); ?></h2>
                 </div>
             <?php } ?>
             <?php if (!empty($section_content)) { ?>
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="about_inner">
-                            <?php echo $section_content; ?>
+                            <?php _e($section_content); ?>
                         </div>
                     </div>
                 </div>

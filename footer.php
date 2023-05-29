@@ -3,6 +3,7 @@
 /**
  * The template for displaying the footer
  */
+
 $footer_logo = get_field('footer_logo', 'option');
 $description = get_field('description', 'option');
 $menu_title = get_field('menu_title', 'option');
@@ -27,13 +28,13 @@ $copyright = get_field('copyright', 'option');
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                         <div class="footer-single-wized">
                             <?php if (!empty($footer_logo)) { ?>
-                                <a class="footer-logo" href="<?php echo get_site_url(); ?>">
-                                    <img src="<?php echo $footer_logo ?>">
+                                <a class="footer-logo" href="<?php echo esc_url(get_site_url()); ?>">
+                                    <img src="<?php echo esc_url($footer_logo); ?>">
                                 </a>
                             <?php } ?>
                             <?php if (!empty($description)) { ?>
                                 <p class="disc">
-                                    <?php echo $description ?>
+                                    <?php _E($description); ?>
                                 </p>
                             <?php } ?>
                         </div>
@@ -44,7 +45,7 @@ $copyright = get_field('copyright', 'option');
                         <div class="footer-single-wized">
                             <?php if (!empty($menu_title)) {?>
                                 <div class="wized-title-area">
-                                    <h4 class="wized-title"><?php echo $menu_title; ?></h4>
+                                    <h4 class="wized-title"><?php _e($menu_title); ?></h4>
                                 </div>
                             <?php } ?>
                             <div class="wized-2-body">
@@ -56,7 +57,7 @@ $copyright = get_field('copyright', 'option');
                                         $menu_item_link = get_sub_field('page_link');
                                         ?>
                                         <?php if (!empty($menu_item_link)) { ?>
-                                            <li><a href="<?php echo $menu_item_link ?>"><?php echo $menu_item ?></a></li>
+                                            <li><a href="<?php echo esc_url($menu_item_link); ?>"><?php _e($menu_item); ?></a></li>
                                         <?php }
                                     }
                                     ?>
@@ -70,7 +71,7 @@ $copyright = get_field('copyright', 'option');
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                         <div class="footer-single-wized">
                             <div class="wized-title-area">
-                                <h4 class="wized-title"><?php echo $contact_title; ?></h4>
+                                <h4 class="wized-title"><?php _e($contact_title); ?></h4>
                             </div>
                             <div class="wized-2-body">
                                 <?php if (!empty($phone_no)) { ?>
@@ -79,8 +80,8 @@ $copyright = get_field('copyright', 'option');
                                             <i class="fas fa-phone-alt"></i>
                                         </div>
                                         <div class="disc">
-                                            <span><?php echo $call_us_title; ?></span>
-                                            <a href="tel:<?php echo $phone_no; ?>"><?php echo $phone_no; ?></a>
+                                            <span><?php _e($call_us_title); ?></span>
+                                            <a href="tel:<?php esc_attr_e($phone_no); ?>"><?php esc_attr_e($phone_no); ?></a>
                                         </div>
                                     </div>
                                 <?php } ?>
@@ -90,8 +91,8 @@ $copyright = get_field('copyright', 'option');
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                         <div class="disc">
-                                            <span><?php echo $email_title; ?></span>
-                                            <a href="mailto:<?php echo $email_address; ?>"><?php echo $email_address; ?></a>
+                                            <span><?php _e($email_title); ?></span>
+                                            <a href="<?php echo esc_url('mailto:' . $email_address); ?>"><?php echo esc_url($email_address); ?></a>
                                         </div>
                                     </div>
                                 <?php } ?>
@@ -101,8 +102,8 @@ $copyright = get_field('copyright', 'option');
                                             <i class="fas fa-map-marker-alt"></i>
                                         </div>
                                         <div class="disc">
-                                            <span><?php echo $address_title; ?></span>
-                                            <p class="mb-0"><?php echo $address; ?></p>
+                                            <span><?php _e($address_title); ?></span>
+                                            <p class="mb-0"><?php _e($address); ?></p>
                                         </div>
                                     </div>
                                 <?php } ?>
@@ -123,7 +124,7 @@ $copyright = get_field('copyright', 'option');
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="copyright">
-                            <?php echo $copyright; ?>
+                            <?php _e($copyright); ?>
                         </div>
                     </div>
                 </div>

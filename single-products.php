@@ -14,10 +14,10 @@ if (has_post_thumbnail(get_the_ID())) {
     <!-- inner banner start -->
     <section class="inner_banner_section">
         <div class="inner_banner_content">
-            <div class="inner_banner_img" style="background-image: url(<?php echo $banner_background_image; ?>);">
+            <div class="inner_banner_img" style="background-image: url(<?php echo esc_url($banner_background_image); ?>);">
                 <?php if (!empty($banner_title)) { ?>
                     <div class="inner_banner_title">
-                        <h1><?php echo $banner_title; ?></h1>
+                        <h1><?php _e($banner_title); ?></h1>
                     </div>
                 <?php } ?>
             </div>
@@ -30,7 +30,7 @@ if (has_post_thumbnail(get_the_ID())) {
     <section class="product_detail_section pt--100 pb--100">
         <div class="container">
             <div class="main-title text-start">
-                <h3 class="title-default"><?php echo get_the_title(); ?></h3>
+                <h3 class="title-default"><?php _e(get_the_title()); ?></h3>
             </div>
 
             <div class="row">
@@ -39,7 +39,7 @@ if (has_post_thumbnail(get_the_ID())) {
                     <div class="product_detail_inner">
                         <?php if (!empty($product_content)) { ?>
                             <div class="product_detail_img">
-                                <img class="img-fluid" src="<?php echo $image; ?>">
+                                <img class="img-fluid" src="<?php echo esc_url($image); ?>">
                             </div>
                         <?php } ?>
 
@@ -54,7 +54,7 @@ if (has_post_thumbnail(get_the_ID())) {
 
                                             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
                                                 <div class="certification_img">
-                                                    <img src="<?php echo $single_certificate; ?>">
+                                                    <img src="<?php echo esc_url($single_certificate); ?>">
                                                 </div>
                                             </div>
 
@@ -66,7 +66,7 @@ if (has_post_thumbnail(get_the_ID())) {
 
                         <?php if (!empty($product_content)) { ?>
                             <div class="product_detail_content">
-                                <?php echo $product_content; ?>
+                                <?php _e($product_content); ?>
                             </div>
                         <?php } ?>
 
@@ -111,12 +111,12 @@ if (has_post_thumbnail(get_the_ID())) {
                                                             <td scope="row"><?php echo $count; ?></td>
                                                             <td>
                                                                 <a class="hover_default table_product_name" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $count; ?>">
-                                                                    <?php echo $product_name; ?>
+                                                                    <?php _e($product_name); ?>
                                                                 </a>
                                                             </td>
-                                                            <td><?php echo $botanical_name; ?></td>
-                                                            <td><?php echo $other_name; ?></td>
-                                                            <td><?php echo $part_used_in_product; ?></td>
+                                                            <td><?php _e($botanical_name); ?></td>
+                                                            <td><?php _e($other_name); ?></td>
+                                                            <td><?php _e($part_used_in_product); ?></td>
                                                             <td class="d-none"></td>
                                                             <td class="d-none"></td>
                                                         </tr>
@@ -133,40 +133,40 @@ if (has_post_thumbnail(get_the_ID())) {
                                                                             <div class="row align-items-center">
                                                                                 <?php if (!empty($product_image_in_popup)) { ?>
                                                                                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-                                                                                        <img class="img-fluid" src="<?php echo $product_image_in_popup; ?>">
+                                                                                        <img class="img-fluid" src="<?php echo esc_url($product_image_in_popup); ?>">
                                                                                     </div>
                                                                                 <?php } ?>
                                                                                 <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
                                                                                     <div class="modal-product-detail-inner">
                                                                                         <?php if (!empty($product_description)) { ?>
-                                                                                            <p><?php echo $product_description; ?></p>
+                                                                                            <p><?php _e($product_description); ?></p>
                                                                                         <?php } ?>
                                                                                         <?php if (!empty($price_per_kg)) { ?>
                                                                                             <p class="price">
-                                                                                                <span class="value">₹ <?php echo $price_per_kg; ?></span> / Kg
+                                                                                                <span class="value">₹ <?php _e($price_per_kg); ?></span> / Kg
                                                                                             </p>
                                                                                         <?php } ?>
                                                                                             
                                                                                         <?php if (!empty($sold_by) || !empty($form) || !empty($packaging_type) || !empty($packaging_size) || !empty($botanical_name)) { ?>
                                                                                         <p class="produt-packaging-info">
                                                                                             <?php if (!empty($sold_by)) { ?>
-                                                                                                <span><b>Sold By :</b> <?php echo $sold_by; ?></span>
+                                                                                                <span><b>Sold By :</b> <?php _e($sold_by); ?></span>
                                                                                             <?php } ?>
 
                                                                                             <?php if (!empty($form)) { ?>
-                                                                                                <span><b>Form:</b> <?php echo $form; ?></span>
+                                                                                                <span><b><?php _e('Form:'); ?></b> <?php _e($form); ?></span>
                                                                                             <?php } ?>
 
                                                                                             <?php if (!empty($packaging_type)) { ?>
-                                                                                                <span><b>Packaging Type:</b> <?php echo $packaging_type; ?></span>
+                                                                                                <span><b><?php _e('Packaging Type:'); ?></b> <?php echo _e($packaging_type); ?></span>
                                                                                             <?php } ?>
 
                                                                                             <?php if (!empty($packaging_size)) { ?>
-                                                                                                <span><b>Packaging Size:</b> <?php echo $packaging_size; ?></span>
+                                                                                                <span><b><?php _e('Packaging Size:'); ?></b> <?php echo _e($packaging_size); ?></span>
                                                                                             <?php } ?>
 
                                                                                             <?php if (!empty($botanical_name)) { ?>
-                                                                                                <span><b>Botanical Name:</b> <?php echo $botanical_name; ?></span>
+                                                                                                <span><b><?php _e('Botanical Name:'); ?></b> <?php echo _e($botanical_name); ?></span>
                                                                                             <?php } ?>
                                                                                         </p>
                                                                                         <?php } ?>
@@ -176,7 +176,7 @@ if (has_post_thumbnail(get_the_ID())) {
                                                                         </div>
 
                                                                         <div class="get-latest-price-form">
-                                                                            <p>Get Latest Price and details from "HNCO Organics Private Limited" on your mobile quickly</p>
+                                                                            <p><?php _e('Get Latest Price and details from "HNCO Organics Private Limited" on your mobile quickly'); ?></p>
 
                                                                             <form class="row g-3">
 
@@ -235,13 +235,13 @@ if (has_post_thumbnail(get_the_ID())) {
                             if ((!empty($widget_title) || !empty($widget_text)) && !empty($select_page_to_redirect)) {?>
                                 <div class="product_sidebar_contact bg-2">
                                     <?php if (!empty($widget_title)) { ?>
-                                        <h3><?php echo $widget_title; ?></h3>
+                                        <h3><?php _e($widget_title); ?></h3>
                                     <?php } ?>
                                     <?php if (!empty($widget_text)) { ?>
-                                        <p><?php echo $widget_text; ?></p>
+                                        <p><?php _e($widget_text); ?></p>
                                     <?php } ?>
                                     <?php if (!empty($select_page_to_redirect)) { ?>
-                                        <a class="btn btn-default" href="<?php echo $select_page_to_redirect; ?>">contact us</a>
+                                        <a class="btn btn-default" href="<?php echo esc_url($select_page_to_redirect); ?>"><?php _e('contact us'); ?></a>
                                     <?php } ?>
                                 </div>
                                 <?php

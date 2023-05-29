@@ -3,6 +3,7 @@
 /**
  * Photo Gallery Block
  */
+
 $title = get_sub_field('title');
 ?>
 <?php if (have_rows('add_image')) { ?>
@@ -10,7 +11,7 @@ $title = get_sub_field('title');
         <div class="container-fluid">
             <?php if ($title) { ?>
                 <div class="main-title">
-                    <h2 class="title-default"><?php echo $title; ?></h2>
+                    <h2 class="title-default"><?php _e($title); ?></h2>
                 </div>
             <?php } ?>
             <div class="row row-gap-15">
@@ -25,8 +26,8 @@ $title = get_sub_field('title');
                     ?>
 
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
-                        <a class="lightbox" href="<?php echo $imagelarge[0]; ?>">
-                            <img src="<?php echo $image[0]; ?>" alt="">
+                        <a class="lightbox" href="<?php echo esc_url($imagelarge[0]); ?>">
+                            <img src="<?php echo esc_url($image[0]); ?>">
                         </a>
                     </div>
                     <?php

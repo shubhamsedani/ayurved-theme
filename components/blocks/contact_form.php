@@ -10,7 +10,7 @@
     <div class="gallery_section gallery pt--100 pb--100">
         <div class="container">
             <div class="main-title">
-                <h2 class="title-default">Get In Touch</h2>
+                <h2 class="title-default"><?php _e('Get In Touch'); ?></h2>
             </div>
             <div class="row row-gap-15">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">

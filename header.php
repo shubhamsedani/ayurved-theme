@@ -23,15 +23,15 @@
                             <div class="left">
                                 <?php if (!empty($email)) { ?>
                                     <div class="mail">
-                                        <a href="mailto:<?php echo $email; ?>"><i class="fal fa-envelope"></i>
-                                            <?php echo $email; ?>
+                                        <a href="<?php echo esc_url('mailto:' . $email); ?>"><i class="fal fa-envelope"></i>
+                                            <?php echo esc_url($email); ?>
                                         </a>
                                     </div>
                                 <?php } ?>
                                 <?php if (!empty($mobile_no)) { ?>
                                     <div class="phone">
-                                        <a href="tel:<?php echo $mobile_no; ?>"><i class="fal fa-phone-alt"></i>
-                                            <?php echo $mobile_no;?></a>
+                                        <a href="tel:<?php esc_attr_e($mobile_no); ?>"><i class="fal fa-phone-alt"></i>
+                                            <?php esc_attr_e($mobile_no); ?></a>
                                     </div>
                                 <?php } ?>
                             </div>
@@ -44,8 +44,8 @@
                                     <?php while (have_rows('social_icons', 'option')) {
                                         the_row(); ?>
                                         <li>
-                                            <a href="<?php echo (get_sub_field('social_link', 'option')) ? get_sub_field('social_link', 'option') : "JavaScript:void(0)"; ?>" target="_blank">
-                                                <i class="<?php echo get_sub_field('icon_class', 'option'); ?>"></i>
+                                            <a href="<?php echo esc_url((get_sub_field('social_link', 'option')) ? get_sub_field('social_link', 'option') : "JavaScript:void(0)"); ?>" target="_blank">
+                                                <i class="<?php _e(get_sub_field('icon_class', 'option')); ?>"></i>
                                             </a>
                                         </li>
                                     <?php } ?>
@@ -65,8 +65,8 @@
                         ?>
                         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4">
                             <div class="thumbnail">
-                                <a href="<?php echo get_site_url(); ?>">
-                                    <img src="<?php echo $site_logo; ?>" alt="Logo"></a>   
+                                <a href="<?php echo esc_url(get_site_url()); ?>">
+                                    <img src="<?php echo esc_url(get_site_url()); ?>" alt="Logo"></a>   
                             </div>
                         </div>
                     <?php } ?>
@@ -87,7 +87,7 @@
                             if (!empty($menu_icon)) { ?>
                                 <div class="button-area">
                                     <button id="menu-btn" class="menu rts-btn btn-primary-alta">
-                                        <img class="menu-light" src="<?php echo $menu_icon ?>" alt="Menu-icon">
+                                        <img class="menu-light" src="<?php echo esc_url($menu_icon); ?>" alt="Menu-icon">
                                     </button>
                                 </div>
                             <?php } ?>

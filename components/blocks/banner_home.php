@@ -14,7 +14,7 @@
                     <div class="slide">
                         <?php if (!empty($home_banner_slider_src)) { ?>
                             <div class="slide__img">
-                                <img src=<?php echo $home_banner_slider_src; ?> alt="Banner Image" class="full-image animated img-fluid" />
+                                <img src=<?php echo esc_url($home_banner_slider_src); ?> alt="Banner Image" class="full-image animated img-fluid" />
                             </div>
                         <?php } ?>
 
@@ -23,11 +23,11 @@
                                 <div class="slide__content--headings text-center">
                                     <?php if ($home_banner_slider_title) { ?>
                                         <h1 class="animated title" data-animation-in="fadeInUp">
-                                            <?php echo $home_banner_slider_title; ?> 
+                                            <?php _e($home_banner_slider_title); ?> 
                                         </h1>
                                     <?php } ?>
                                     <?php if ($home_banner_slider_button_link) { ?>
-                                        <a href="<?php echo $home_banner_slider_button_link;?>" class="btn btn-default animated" data-animation-in="fadeInUp" target="_self">
+                                        <a href="<?php echo esc_url($home_banner_slider_button_link); ?>" class="btn btn-default animated" data-animation-in="fadeInUp" target="_self">
                                             <?php echo get_sub_field('slider__button_text');?>
                                         </a>
                                     <?php } ?>

@@ -20,25 +20,25 @@ if (!empty($title) || !empty($sub_title) || !empty($description) || !empty($imag
                     <div class="services_content">
                         <?php if (!empty($title)) {?>
                             <div class="main-title">
-                                <h2 class="title-default"><?php echo $title;?></h2>
+                                <h2 class="title-default"><?php _e($title); ?></h2>
                             </div>
                         <?php } ?>
                         <?php if ($sub_line || $sub_title || $description) { ?>
                             <div class="services_inner_content">
                             <?php if ($sub_line) { ?>
-                                <p><?php echo $sub_line ;?></p>
+                                <p><?php _e($sub_line); ?></p>
                             <?php } ?> 
                             <?php if ($button_link || $sub_title || $description) { ?>   
                                 <div class="services_description">
                                     <?php if ($sub_title) { ?>
-                                        <h4><?php echo $sub_title;?></h4>
+                                        <h4><?php _e($sub_title); ?></h4>
                                     <?php } ?>
                                     <?php if ($description) { ?> 
-                                        <p><?php echo $description;?></p>
+                                        <p><?php _e($description); ?></p>
                                     <?php } ?>
                                     <?php if ($button_link) { ?>
-                                        <a href="<?php echo $button_link;?>" class="btn btn-default" >
-                                            <?php echo get_sub_field('button_text');?>
+                                        <a href="<?php echo esc_url($button_link); ?>" class="btn btn-default" >
+                                            <?php _e(get_sub_field('button_text')); ?>
                                         </a>
                                     <?php } ?>
                                 </div>
@@ -51,7 +51,7 @@ if (!empty($title) || !empty($sub_title) || !empty($description) || !empty($imag
             <?php if (!empty($image)) { ?>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                     <div class="services_img">
-                        <img src=<?php echo $image;?> alt="image">
+                        <img src=<?php echo esc_url($image); ?> alt="image">
                     </div>
                 </div>
             <?php } ?>

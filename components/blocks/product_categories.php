@@ -19,7 +19,7 @@ if ($query->have_posts()) { ?>
             $title = get_sub_field('title');
             if (!empty($title)) { ?>
                 <div class="main-title">
-                    <h2 class="title-default"><?php echo $title ?></h2>
+                    <h2 class="title-default"><?php _e($title); ?></h2>
                 </div>
             <?php } ?>
             
@@ -43,20 +43,20 @@ if ($query->have_posts()) { ?>
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                             <div class="product_detail mb-25">
                                 <div class="product_img">
-                                    <img src=<?php echo $image; ?> />
+                                    <img src=<?php echo esc_url($image); ?> />
                                 </div>
                                 <div class="product_content">
                                     <?php if (!empty($product_title)) { ?>
                                         <div class="product_title">
                                             <h4>
-                                                <a class="hover_default" href="<?php echo $product_page_url; ?>">
-                                                    <?php echo $product_title; ?></a>
+                                                <a class="hover_default" href="<?php echo esc_url($product_page_url); ?>">
+                                                    <?php _e($product_title); ?></a>
                                             </h4>
                                         </div>
                                     <?php } ?>
                                     <?php if (!empty($product_excerpt)) { ?>
                                         <div class="product_para">
-                                            <p><?php echo $product_excerpt; ?></p>
+                                            <p><?php _e($product_excerpt); ?></p>
                                         </div>
                                     <?php } ?>
                                 </div>

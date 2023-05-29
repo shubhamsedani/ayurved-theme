@@ -19,11 +19,11 @@ if (have_rows('single_card_details')) { ?>
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                             <div class="about_section_2_inner">
                                 <?php if (!empty($single_card_title)) { ?>
-                                    <h3><?php echo $single_card_title; ?></h3>
+                                    <h3><?php _e($single_card_title); ?></h3>
                                 <?php } ?>
                                 <?php if (!empty($single_card_content)) { ?>
                                     <div class="about_section_2_inner_content">
-                                        <?php echo $single_card_content; ?>
+                                        <?php _e($single_card_content); ?>
                                     </div>
                                 <?php } ?>
                             </div>

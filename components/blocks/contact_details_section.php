@@ -23,7 +23,7 @@ $linked_in_link = get_sub_field('linked_in_link');
 
                         <?php if (!empty($section_title)) { ?>
                             <div class="address_title">
-                                <h3><?php echo $section_title; ?></h3>
+                                <h3><?php _e($section_title); ?></h3>
                             </div>
                         <?php } ?>
 
@@ -33,7 +33,7 @@ $linked_in_link = get_sub_field('linked_in_link');
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div class="address_content">
-                                    <p><strong>Address: </strong> <?php echo $office_address; ?></p>
+                                    <p><strong><?php _e('Address: '); ?></strong> <?php _e($office_address); ?></p>
                                 </div>
                             </div>
                         <?php } ?>
@@ -44,7 +44,7 @@ $linked_in_link = get_sub_field('linked_in_link');
                                     <div class="contact_icon"><i class="fas fa-phone-alt"></i></div>
                                     <div class="contact_content">
                                         <p class="mb-0">
-                                            <a class="hover_default" href="tel:<?php echo $contact_number; ?>"><?php echo $contact_number; ?> </a>
+                                            <a class="hover_default" href="tel:<?php esc_attr_e($contact_number); ?>"><?php esc_attr_e($contact_number); ?> </a>
                                         </p>
                                     </div>
                                 </div>
@@ -75,9 +75,9 @@ $linked_in_link = get_sub_field('linked_in_link');
                             <div class="social_detail">
                                 <div class="social_content">
                                     <ul>
-                                        <li><a href="<?php echo $facebook_link; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="<?php echo $twitter_link; ?>" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="<?php echo $linked_in_link; ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="<?php echo esc_url($facebook_link); ?>" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="<?php echo esc_url($twitter_link); ?>" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="<?php echo esc_url($linked_in_link); ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

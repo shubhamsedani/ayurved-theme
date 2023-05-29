@@ -20,11 +20,11 @@ if (have_rows('certificate_image_and_title')) { ?>
                     <?php if (!empty($single_certificate)) { ?>
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                             <div class="certificate_holder">         
-                                <a class="lightbox" href="<?php echo $single_certificate; ?>">
-                                    <img src="<?php echo $single_certificate; ?>">
+                                <a class="lightbox" href="<?php echo esc_url($single_certificate); ?>">
+                                    <img src="<?php echo esc_url($single_certificate); ?>">
                                     <?php if (!empty($single_title)) { ?>
                                         <div class="certificate_title">
-                                            <h4><?php echo $single_title; ?></h4>
+                                            <h4><?php _e($single_title); ?></h4>
                                         </div>
                                     <?php } ?>
                                 </a>

@@ -12,7 +12,7 @@ $title = get_sub_field('title');
             
             <?php if ($title) { ?>
                 <div class="main-title">
-                    <h2 class="title-default text-white"><?php echo $title; ?></h2>
+                    <h2 class="title-default text-white"><?php _e($title); ?></h2>
                 </div>
             <?php }
             ?>
@@ -25,7 +25,7 @@ $title = get_sub_field('title');
                     <?php if (!empty($image)) { ?>
                         <div class="slide">
                             <div class="slide__img">
-                                <img src="<?php echo $image; ?>" alt="Certificate" class="img-fluid" />
+                                <img src="<?php echo esc_url($image); ?>" alt="Certificate" class="img-fluid" />
                             </div>
                         </div>
                         <?php
